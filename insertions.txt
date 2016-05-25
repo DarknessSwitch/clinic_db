@@ -1,0 +1,28 @@
+insert into employee set name="Greg Qwerty",specialty="Cardiologist", 
+ years_of_expirience=10, hour_salary=100;
+insert into employee set name="John lock",specialty="Dentist", 
+ years_of_expirience=12, hour_salary=110;
+insert into employee set name="Ivan Baraban",specialty="Surgeon", 
+ years_of_expirience=5, hour_salary=90;
+insert into employee set name="Mykola Aerock", specialty="Dentist", 
+ years_of_expirience=6, hour_salary=150;
+insert into employee set name="Mario Qwert",specialty="Janitor", 
+ years_of_expirience=2, hour_salary=50;
+
+ insert into patient set name="Kate",age=5,phone_number="223-24",
+address="st. Good 244", sessions_taken=1;
+insert into patient set name="Quake",age=75,phone_number="768-24",
+address="st. Qerrty 244", sessions_taken=100;
+insert into patient set name="Victoria",age=25,phone_number="123-24",
+address="st. Optovolokno 244", sessions_taken=12;
+
+insert into proc set name="dental filling",duration=50,cost=400;
+insert into proc set name="kidney removal",duration=120,cost=1000;
+insert into proc set name="cardio massage",duration=30,cost=100;
+
+insert into medical_card set disease_name="caries",years_suffered=1,
+is_cured=false,doctor_id=2,patient_id=2;
+insert into medical_card set disease_name="tachycardia",years_suffered=1,
+is_cured=false,doctor_id=1,patient_id=1;
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,doctor_id=3,patient_id=3;

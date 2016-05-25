@@ -1,0 +1,82 @@
+create database clinic;
+use clinic;
+
+create table proc 
+(
+   id int primary key not null auto_increment,
+   name varchar(50) not null,
+   duration int not null,
+   cost decimal not null
+);
+
+create table patient 
+(
+   id int not null auto_increment,
+   name varchar(50) not null,
+   age int not null,
+   phone_number varchar(50) not null,
+   address varchar(50) not null,
+   sessions_taken int,
+   primary key(id)
+);
+
+create table employee
+(
+   id int not null auto_increment,
+    name varchar(50) not null,
+    specialty varchar(50),
+    hour_salary decimal,
+    years_of_expirience int,
+    primary key(id)
+);
+
+create table medical_card
+(
+   id int primary key not null auto_increment,
+    disease_name varchar(50) not null,
+    years_suffered int,
+    is_cured bool,
+    doctor_id int,
+    patient_id int,
+    foreign key (doctor_id) references employee(id) on delete cascade on update cascade,
+    foreign key (patient_id) references patient(id) on delete cascade on update cascade
+);
+
+create table session
+(
+ id int not null auto_increment,
+ date_time datetime,
+ total_cost decimal,
+ proc_id int,
+ employee_id int,
+ card_id int,
+ primary key(id),
+ foreign key(proc_id) references proc(id),
+ foreign key(employee_id) references employee(id) on delete cascade on update cascade,
+ foreign key(card_id) references medical_card(id) on delete cascade on update cascade
+);
+
+
+create table test
+(
+id int not null auto_increment,
+name varchar(50) not null,
+date_time datetime,
+result varchar(255),
+card_id int,
+primary key(id),
+foreign key(card_id) references medical_card(id) on delete cascade on update cascade
+);
+
+create table survey
+(
+id int not null auto_increment,
+name varchar(50), 
+date_time datetime,
+result varchar(255),
+card_id int,
+doctor_id int,
+primary key(id),
+foreign key(card_id) references medical_card(id) on delete cascade on update cascade,
+foreign key(doctor_id) references employee(id) on delete cascade on update cascade
+);
