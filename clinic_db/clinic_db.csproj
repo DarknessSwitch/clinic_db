@@ -115,6 +115,18 @@
     <Compile Include="UI_Controls\ProceduresList.Designer.cs">
       <DependentUpon>ProceduresList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_Controls\ReportMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_Controls\ReportMenu.Designer.cs">
+      <DependentUpon>ReportMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Controls\ReportWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_Controls\ReportWindow.Designer.cs">
+      <DependentUpon>ReportWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Controls\StaffList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Controls\ProceduresList.resx">
       <DependentUpon>ProceduresList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Controls\ReportMenu.resx">
+      <DependentUpon>ReportMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Controls\ReportWindow.resx">
+      <DependentUpon>ReportWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Controls\StaffList.resx">
       <DependentUpon>StaffList.cs</DependentUpon>

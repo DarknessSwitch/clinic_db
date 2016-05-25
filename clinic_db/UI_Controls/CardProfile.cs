@@ -45,15 +45,15 @@ namespace clinic_db
             for (int i = 0; i < _surveys.Count; i++)
             {
                 _surveys[i].EmployeeName = DbConnector.GetInstance().GetEmployeeProfile(_surveys[i].employeeId).Name ?? "";
-                TextBox lb = new TextBox(); lb.Size = new Size(80, lb.Height); lb.Text = _surveys[i].Name; lb.Show();
+                TextBox lb = new TextBox(); lb.Font = new Font("Calibri", 12); lb.Size = new Size(80, lb.Height); lb.Text = _surveys[i].Name; lb.Show();
 
                 DateTimePicker lb1 = new DateTimePicker(); lb1.Size = new Size(120, lb1.Height);
                 lb1.Text = _surveys[i].DateTime; lb1.Show();
 
-                TextBox lb2 = new TextBox(); lb2.Size = new Size(150, lb2.Height);
+                TextBox lb2 = new TextBox(); lb2.Font = new Font("Calibri", 12); lb2.Size = new Size(150, lb2.Height);
                 lb2.Text = _surveys[i].Result; lb2.Show();
 
-                ComboBox cb = new ComboBox(); cb.Size = new Size(100, cb.Height);
+                ComboBox cb = new ComboBox(); cb.Font = new Font("Calibri", 12); cb.Size = new Size(100, cb.Height);
                 cb.BeginUpdate();
                 _employees.ForEach(x => cb.Items.Add(x.Name));
                 cb.EndUpdate();
@@ -89,13 +89,13 @@ namespace clinic_db
                 _sessions[i].EmployeeName = DbConnector.GetInstance().
                     GetEmployeeProfile(_sessions[i].employeeId).Name ?? "";
 
-                Label lb = new Label(); lb.Text = _sessions[i].ProcedureName; lb.Show();
+                Label lb = new Label();lb.Font= new Font("Calibri",12); lb.Text = _sessions[i].ProcedureName; lb.Show();
 
                 DateTimePicker lb1 = new DateTimePicker(); lb1.Size = new Size(120, lb1.Height);
-                lb1.Text = _sessions[i].DateTime; lb1.Show(); 
-                
-                Label lb2 = new Label();  lb2.Text = _sessions[i].EmployeeName; lb2.Show();
-                Label lb3 = new Label();  lb3.Text = _sessions[i].Cost.ToString(); lb2.Show();
+                lb1.Text = _sessions[i].DateTime; lb1.Show();
+
+                Label lb2 = new Label(); lb2.Font = new Font("Calibri", 12); lb2.Text = _sessions[i].EmployeeName; lb2.Show();
+                Label lb3 = new Label(); lb3.Font = new Font("Calibri", 12); lb3.Text = _sessions[i].Cost.ToString(); lb2.Show();
                 DeleteButton sb = new DeleteButton(_sessions[i].id, "session");
                 sb.Click+=sb_Click;
                 this.SessionsTable.Controls.Add(lb, 0, i);
@@ -112,6 +112,7 @@ namespace clinic_db
             b.ExecuteDeletion();
             LoadEntriesSessions();
         }
+
         public void LoadEntriesTests()
         {
             CuredLabel.Text = _card.IsCured ? "Cured" : "Not cured";
@@ -121,12 +122,14 @@ namespace clinic_db
             TestsTable.Update();
             for (int i = 0; i < _tests.Count; i++)
             {
-                TextBox lb = new TextBox(); lb.Size = new Size(80, lb.Height); lb.Text = _tests[i].Name; lb.Show();
+                TextBox lb = new TextBox(); lb.Size = new Size(80, lb.Height); lb.Font = new Font("Calibri", 12); 
+                lb.Text = _tests[i].Name; lb.Show();
 
                 DateTimePicker lb1 = new DateTimePicker(); lb1.Size = new Size(120, lb1.Height);
                 lb1.Text = _tests[i].DateTime; lb1.Show();
-                
-                TextBox lb2 = new TextBox(); lb2.Size = new Size(400, lb2.Height); 
+
+                TextBox lb2 = new TextBox(); lb2.Font = new Font("Calibri", 12);
+                lb2.Size = new Size(400, lb2.Height); 
                 lb2.Text = _tests[i].Result; lb2.Show();
                 
                 DeleteButton b = new DeleteButton(_tests[i].id, "test");

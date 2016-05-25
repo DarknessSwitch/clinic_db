@@ -21,16 +21,23 @@ namespace clinic_db
         {
             StaffTab.Enter += StaffTab_Enter;
             StaffList slist = new StaffList();
-            slist.LoadEntries(); this.StaffTab.Controls.Add(slist);
+            this.StaffTab.Controls.Add(slist);
 
             PatientsTab.Enter += PatientsTab_Enter;
             PatientList plist = new PatientList();
-            plist.LoadEntries();
             this.PatientsTab.Controls.Add(plist);
 
             ProceduresTab.Enter += ProceduresTab_Enter;
             ProceduresList prlist = new ProceduresList();
-            prlist.LoadEntries(); this.ProceduresTab.Controls.Add(prlist);
+            this.ProceduresTab.Controls.Add(prlist);
+
+            ReportsTab.Enter += ReportsTab_Enter;
+            ReportsTab.Controls.Add(new ReportMenu());
+        }
+
+        void ReportsTab_Enter(object sender, EventArgs e)
+        {
+            ReportMenu m = (ReportMenu)ReportsTab.Controls["ReportMenu"];
         }
 
         void PatientsTab_Enter(object sender, EventArgs e)

@@ -33,8 +33,8 @@ namespace clinic_db
             this.tableLayoutPanel1.Update();
             for (int i = 0; i < staffList.Count; i++)
             {
-                LinkLabel lb = new LinkLabel(); lb.Text = staffList[i].Name; lb.Show();
-                Label lb1 = new Label(); lb1.Text = staffList[i].Specialty; lb1.Show();
+                LinkLabel lb = new LinkLabel(); lb.Font = new Font("Calibri",12);  lb.Text = staffList[i].Name; lb.Show();
+                Label lb1 = new Label(); lb1.Font = new Font("Calibri", 12); lb1.Text = staffList[i].Specialty; lb1.Show();
                 DeleteButton b = new DeleteButton(staffList[i].id, "employee"); b.Show();
                 lb.Click += lb_Click;
                 b.Click += b_Click;

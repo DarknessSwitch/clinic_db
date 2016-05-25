@@ -32,9 +32,9 @@ namespace clinic_db
             this.ProceduresTable.Update();
             for (int i = 0; i < procs.Count; i++)
             {
-                TextBox lb = new TextBox(); lb.Text = procs[i].Name; lb.Show();
-                TextBox lb1 = new TextBox(); lb1.Text = procs[i].Duration.ToString(); lb1.Show();
-                TextBox lb2 = new TextBox(); lb2.Text = procs[i].Cost.ToString(); lb2.Show();
+                TextBox lb = new TextBox(); lb.Font = new Font("Calibri", 12); lb.Text = procs[i].Name; lb.Show();
+                TextBox lb1 = new TextBox(); lb1.Font = new Font("Calibri", 12); lb1.Text = procs[i].Duration.ToString(); lb1.Show();
+                TextBox lb2 = new TextBox(); lb2.Font = new Font("Calibri", 12); lb2.Text = procs[i].Cost.ToString(); lb2.Show();
                 DeleteButton b = new DeleteButton(procs[i].id, "proc");
                 b.Click += b_Click;
                 this.ProceduresTable.Controls.Add(lb, 0, i);
