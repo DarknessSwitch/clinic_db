@@ -257,5 +257,14 @@ namespace clinic_db
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
+
+        public DataSet GetDataset(string query)
+        {
+            DataSet result = new DataSet();
+            MySqlDataAdapter a = new MySqlDataAdapter(query, connection);
+            MySqlCommandBuilder cb = new MySqlCommandBuilder(a);
+            a.Fill(result, "data");
+            return result;
+        }
     }
 }

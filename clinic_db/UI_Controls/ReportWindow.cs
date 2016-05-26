@@ -12,16 +12,27 @@ namespace clinic_db
 {
     public partial class ReportWindow : UserControl
     {
-        public ReportWindow(string title)
+        private string _q;
+        public ReportWindow(string title,string query)
         {
             InitializeComponent();
             TopLabel.Text = title;
+            _q = query;
             LoadEntries();
         }
 
         public void LoadEntries()
         {
+            DataSet data = DbConnector.GetInstance().GetDataset(_q);
+            DataGrid.DataSource = data;
+            DataGrid.DataMember = "data";
+        }
 
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Form parent = (Form)this.Parent;
+            this.Dispose();
+            parent.Close();
         }
     }
 }

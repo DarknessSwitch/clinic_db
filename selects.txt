@@ -1,0 +1,8 @@
+select distinct mc.disease_name as disease, session.date_time as 'session date',proc.name as 'procedure',
+   employee.name as doctor from session 
+   inner join proc on proc.id=session.proc_id
+    inner join employee on employee.id = session.employee_id
+   inner join (select medical_card.id,medical_card.disease_name from medical_card
+            inner join patient
+            on medical_card.patient_id = 4) as mc
+                on session.card_id = mc.id;
