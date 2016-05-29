@@ -46,10 +46,12 @@ namespace clinic_db
             this.tableLayoutPanel1.Update();
             for (int i = 0; i < patients.Count; i++)
             {
-                LinkLabel lb = new LinkLabel(); lb.Font = new Font("Calibri",12); lb.Text = patients[i].Name; lb.Show();
+                LinkLabel lb = new LinkLabel(); lb.AutoSize = true;
+                lb.Font = new Font("Calibri",12); lb.Text = patients[i].Name; lb.Show();
                 lb.Click += lb_Click;
                 Label lb1 = new Label(); lb1.Text = patients[i].Age.ToString(); lb1.Font= new Font("Calibri",12); lb1.Show();
-                Label lb2 = new Label(); lb2.Text = patients[i].Address; lb2.Font = new Font("Calibri", 12); lb2.Show();
+                Label lb2 = new Label(); lb2.AutoSize = true;
+                lb2.Text = patients[i].Address; lb2.Font = new Font("Calibri", 12); lb2.Show();
                 DeleteButton b = new DeleteButton(patients[i].id, "patient"); b.Click += b_Click;
                 this.tableLayoutPanel1.Controls.Add(lb, 0, i);
                 this.tableLayoutPanel1.Controls.Add(lb1, 1, i);

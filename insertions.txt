@@ -1,13 +1,13 @@
 insert into employee set name="Greg Qwerty",specialty="Cardiologist", 
- years_of_expirience=10, hour_salary=100;
+ years_of_experience=10, hour_salary=100;
 insert into employee set name="John lock",specialty="Dentist", 
- years_of_expirience=12, hour_salary=110;
+ years_of_experience=12, hour_salary=110;
 insert into employee set name="Ivan Baraban",specialty="Surgeon", 
- years_of_expirience=5, hour_salary=90;
+ years_of_experience=5, hour_salary=90;
 insert into employee set name="Mykola Aerock", specialty="Dentist", 
- years_of_expirience=6, hour_salary=150;
+ years_of_experience=6, hour_salary=150;
 insert into employee set name="Mario Qwert",specialty="Janitor", 
- years_of_expirience=2, hour_salary=50;
+ years_of_experience=2, hour_salary=50;
 
  insert into patient set name="Kate",age=5,phone_number="223-24",
 address="st. Good 244", sessions_taken=1;

@@ -47,7 +47,7 @@ create table employee
     name varchar(50) not null,
     specialty varchar(50),
     hour_salary decimal,
-    years_of_expirience int,
+    years_of_experience int,
     primary key(id)
 );
 

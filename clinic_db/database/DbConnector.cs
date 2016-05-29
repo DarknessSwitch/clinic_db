@@ -101,9 +101,9 @@ namespace clinic_db
         {
             MySqlCommand cmd = new MySqlCommand(String.Format(@"update employee set 
                                                 name=""{0}"",specialty=""{1}"",hour_salary={2},
-                                                   years_of_expirience={3} where id={2}",
+                                                   years_of_experience={3} where id={2}",
                                                 profile.Name, profile.Specialty,profile.HourSalary,
-                                                profile.YearsOfExpirience,profile.id), connection);
+                                                profile.YearsOfexperience,profile.id), connection);
             cmd.ExecuteNonQuery();
         }
 

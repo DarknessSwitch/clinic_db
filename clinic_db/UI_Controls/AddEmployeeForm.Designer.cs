@@ -33,11 +33,11 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.SpecialtyLabel = new System.Windows.Forms.Label();
             this.SalaryLabel = new System.Windows.Forms.Label();
-            this.ExpirienceLabel = new System.Windows.Forms.Label();
+            this.experienceLabel = new System.Windows.Forms.Label();
             this.NameBox = new System.Windows.Forms.TextBox();
             this.SpecialtyBox = new System.Windows.Forms.TextBox();
             this.SalaryBox = new System.Windows.Forms.TextBox();
-            this.ExpirienceBox = new System.Windows.Forms.TextBox();
+            this.experienceBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -87,14 +87,14 @@
             this.SalaryLabel.TabIndex = 4;
             this.SalaryLabel.Text = "Hour salary";
             // 
-            // ExpirienceLabel
+            // experienceLabel
             // 
-            this.ExpirienceLabel.AutoSize = true;
-            this.ExpirienceLabel.Location = new System.Drawing.Point(13, 138);
-            this.ExpirienceLabel.Name = "ExpirienceLabel";
-            this.ExpirienceLabel.Size = new System.Drawing.Size(97, 13);
-            this.ExpirienceLabel.TabIndex = 5;
-            this.ExpirienceLabel.Text = "Years of expirience";
+            this.experienceLabel.AutoSize = true;
+            this.experienceLabel.Location = new System.Drawing.Point(13, 138);
+            this.experienceLabel.Name = "experienceLabel";
+            this.experienceLabel.Size = new System.Drawing.Size(97, 13);
+            this.experienceLabel.TabIndex = 5;
+            this.experienceLabel.Text = "Years of experience";
             // 
             // NameBox
             // 
@@ -117,23 +117,23 @@
             this.SalaryBox.Size = new System.Drawing.Size(138, 20);
             this.SalaryBox.TabIndex = 8;
             // 
-            // ExpirienceBox
+            // experienceBox
             // 
-            this.ExpirienceBox.Location = new System.Drawing.Point(145, 138);
-            this.ExpirienceBox.Name = "ExpirienceBox";
-            this.ExpirienceBox.Size = new System.Drawing.Size(138, 20);
-            this.ExpirienceBox.TabIndex = 9;
+            this.experienceBox.Location = new System.Drawing.Point(145, 138);
+            this.experienceBox.Name = "experienceBox";
+            this.experienceBox.Size = new System.Drawing.Size(138, 20);
+            this.experienceBox.TabIndex = 9;
             // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 273);
-            this.Controls.Add(this.ExpirienceBox);
+            this.Controls.Add(this.experienceBox);
             this.Controls.Add(this.SalaryBox);
             this.Controls.Add(this.SpecialtyBox);
             this.Controls.Add(this.NameBox);
-            this.Controls.Add(this.ExpirienceLabel);
+            this.Controls.Add(this.experienceLabel);
             this.Controls.Add(this.SalaryLabel);
             this.Controls.Add(this.SpecialtyLabel);
             this.Controls.Add(this.NameLabel);
@@ -153,10 +153,10 @@
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label SpecialtyLabel;
         private System.Windows.Forms.Label SalaryLabel;
-        private System.Windows.Forms.Label ExpirienceLabel;
+        private System.Windows.Forms.Label experienceLabel;
         private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.TextBox SpecialtyBox;
         private System.Windows.Forms.TextBox SalaryBox;
-        private System.Windows.Forms.TextBox ExpirienceBox;
+        private System.Windows.Forms.TextBox experienceBox;
     }
 }

@@ -31,7 +31,7 @@ namespace clinic_db
             NameTextBox.Text = _profile.Name;
             SpecialtyTextBox.Text = _profile.Specialty;
             YoeTextBox.Text = _profile.HourSalary.ToString();
-            SalaryTextBox.Text = _profile.YearsOfExpirience.ToString();
+            SalaryTextBox.Text = _profile.YearsOfexperience.ToString();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace clinic_db
         {
             _profile.Name = NameTextBox.Text;
             _profile.Specialty = SpecialtyTextBox.Text;
-            _profile.YearsOfExpirience = int.Parse(YoeTextBox.Text);
+            _profile.YearsOfexperience = int.Parse(YoeTextBox.Text);
             _profile.HourSalary = int.Parse(SalaryTextBox.Text);
             DbConnector.GetInstance().UpdateEmployeeProfile(_profile);
         }

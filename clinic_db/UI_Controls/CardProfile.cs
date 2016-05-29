@@ -93,7 +93,7 @@ namespace clinic_db
             SessionsTable.Update();
             for (int i = 0; i < _sessions.Count; i++)
             {
-                Label lb = new Label(); lb.Font = new Font("Calibri", 12); lb.Size = new Size(150, lb.Height);
+                Label lb = new Label(); lb.AutoSize = true; lb.Font = new Font("Calibri", 12); lb.Size = new Size(150, lb.Height);
                 lb.Text = _sessions[i].ProcedureName; lb.Show();
 
                 DateTimePicker lb1 = new DateTimePicker(); lb1.Size = new Size(120, lb1.Height);

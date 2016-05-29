@@ -11,12 +11,12 @@ namespace clinic_db
         public EmployeeModel(string id,string name, string spec, string hs,string yoe)
         {
             this.Name = name; this.Specialty = spec; this.id = int.Parse(id);
-            this.YearsOfExpirience = int.Parse(yoe); this.HourSalary = int.Parse(hs);
+            this.YearsOfexperience = int.Parse(yoe); this.HourSalary = int.Parse(hs);
         }
         public int id;
         public string Name;
         public string Specialty;
-        public int YearsOfExpirience;
+        public int YearsOfexperience;
         public int HourSalary;
     }
 }

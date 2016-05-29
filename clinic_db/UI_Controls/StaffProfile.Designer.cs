@@ -111,7 +111,7 @@
             this.YoELabel.Name = "YoELabel";
             this.YoELabel.Size = new System.Drawing.Size(97, 13);
             this.YoELabel.TabIndex = 2;
-            this.YoELabel.Text = "Years of expirience";
+            this.YoELabel.Text = "Years of experience";
             // 
             // NameLabel
             // 

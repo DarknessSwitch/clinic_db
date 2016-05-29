@@ -29,7 +29,7 @@ namespace clinic_db
             values.Add(String.Format("\"{0}\"", NameBox.Text));
             values.Add(String.Format("\"{0}\"", SpecialtyBox.Text));
             values.Add(String.Format("{0}", SalaryBox.Text));
-            values.Add(String.Format("{0}", ExpirienceBox.Text));
+            values.Add(String.Format("{0}", experienceBox.Text));
             DbConnector.GetInstance().AddEntry("employee", values);
             this._parent.Enabled = true;
             StaffList list = (StaffList)this._parent;
