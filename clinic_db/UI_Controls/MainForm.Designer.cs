@@ -46,7 +46,7 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(850, 456);
+            this.tabControl1.Size = new System.Drawing.Size(850, 505);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -55,7 +55,7 @@
             this.PatientsTab.Location = new System.Drawing.Point(4, 29);
             this.PatientsTab.Name = "PatientsTab";
             this.PatientsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.PatientsTab.Size = new System.Drawing.Size(842, 423);
+            this.PatientsTab.Size = new System.Drawing.Size(842, 472);
             this.PatientsTab.TabIndex = 0;
             this.PatientsTab.Text = "Patients";
             this.PatientsTab.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             this.StaffTab.Location = new System.Drawing.Point(4, 29);
             this.StaffTab.Name = "StaffTab";
             this.StaffTab.Padding = new System.Windows.Forms.Padding(3);
-            this.StaffTab.Size = new System.Drawing.Size(842, 379);
+            this.StaffTab.Size = new System.Drawing.Size(842, 423);
             this.StaffTab.TabIndex = 1;
             this.StaffTab.Text = "Staff";
             this.StaffTab.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             this.ProceduresTab.Location = new System.Drawing.Point(4, 29);
             this.ProceduresTab.Name = "ProceduresTab";
-            this.ProceduresTab.Size = new System.Drawing.Size(842, 379);
+            this.ProceduresTab.Size = new System.Drawing.Size(842, 472);
             this.ProceduresTab.TabIndex = 3;
             this.ProceduresTab.Text = "Procedures";
             this.ProceduresTab.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             // 
             this.ReportsTab.Location = new System.Drawing.Point(4, 29);
             this.ReportsTab.Name = "ReportsTab";
-            this.ReportsTab.Size = new System.Drawing.Size(842, 379);
+            this.ReportsTab.Size = new System.Drawing.Size(842, 472);
             this.ReportsTab.TabIndex = 2;
             this.ReportsTab.Text = "Reports";
             this.ReportsTab.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 457);
+            this.ClientSize = new System.Drawing.Size(854, 573);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.Text = "MainForm";

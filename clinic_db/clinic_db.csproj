@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,7 @@
     <Compile Include="Models\SessionModel.cs" />
     <Compile Include="Models\SurveyModel.cs" />
     <Compile Include="Models\TestModel.cs" />
+    <Compile Include="Models\TypeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI_Controls\AddCard.cs">
@@ -88,6 +90,12 @@
     <Compile Include="UI_Controls\CardProfile.Designer.cs">
       <DependentUpon>CardProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_Controls\Check.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_Controls\Check.Designer.cs">
+      <DependentUpon>Check.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Controls\DeleteButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -109,11 +117,17 @@
     <Compile Include="UI_Controls\PatientProfile.Designer.cs">
       <DependentUpon>PatientProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI_Controls\ProceduresList.cs">
+    <Compile Include="UI_Controls\ChartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI_Controls\ProceduresList.Designer.cs">
-      <DependentUpon>ProceduresList.cs</DependentUpon>
+    <Compile Include="UI_Controls\ChartControl.Designer.cs">
+      <DependentUpon>ChartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Controls\ProcedureList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_Controls\ProcedureList.Designer.cs">
+      <DependentUpon>ProcedureList.cs</DependentUpon>
     </Compile>
     <Compile Include="UI_Controls\ReportMenu.cs">
       <SubType>UserControl</SubType>
@@ -163,6 +177,9 @@
     <EmbeddedResource Include="UI_Controls\CardProfile.resx">
       <DependentUpon>CardProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI_Controls\Check.resx">
+      <DependentUpon>Check.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI_Controls\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,8 +189,11 @@
     <EmbeddedResource Include="UI_Controls\PatientProfile.resx">
       <DependentUpon>PatientProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI_Controls\ProceduresList.resx">
-      <DependentUpon>ProceduresList.cs</DependentUpon>
+    <EmbeddedResource Include="UI_Controls\ChartControl.resx">
+      <DependentUpon>ChartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Controls\ProcedureList.resx">
+      <DependentUpon>ProcedureList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Controls\ReportMenu.resx">
       <DependentUpon>ReportMenu.cs</DependentUpon>

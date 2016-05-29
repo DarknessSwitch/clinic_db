@@ -20,9 +20,54 @@ insert into proc set name="dental filling",duration=50,cost=400;
 insert into proc set name="kidney removal",duration=120,cost=1000;
 insert into proc set name="cardio massage",duration=30,cost=100;
 
+insert into testtype set name="blood test",cost=50;
+insert into testtype set name="vein blood test",cost=60;
+
+insert into surveytype set name="lungs observation",cost=30;
+insert into surveytype set name="heart observation",cost=30;
+
+insert into diseasetype set name="cardio";
+insert into diseasetype set name="dental";
+insert into diseasetype set name="gastric";
+
 insert into medical_card set disease_name="caries",years_suffered=1,
-is_cured=false,doctor_id=2,patient_id=2;
+is_cured=false,patient_id=2,employee_id = 1,type_id=3,added_on='2016-05-05';
+
 insert into medical_card set disease_name="tachycardia",years_suffered=1,
-is_cured=false,doctor_id=1,patient_id=1;
+is_cured=false,patient_id=1,employee_id = 2,type_id=2,added_on='2017-05-05';
+
 insert into medical_card set disease_name="kidney failure",years_suffered=1,
-is_cured=false,doctor_id=3,patient_id=3;
+is_cured=false,patient_id=3,employee_id = 3,type_id=1,added_on='2016-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=3,added_on='2016-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=2,added_on='2017-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=1,added_on='2017-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=1,added_on='2017-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=1,added_on='2017-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=3,added_on='2016-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=2,added_on='2015-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=1,added_on='2015-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=2,added_on='2016-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=2,added_on='2016-05-05';
+
+insert into medical_card set disease_name="kidney failure",years_suffered=1,
+is_cured=false,patient_id=3,employee_id = 3,type_id=2,added_on='2016-05-05';

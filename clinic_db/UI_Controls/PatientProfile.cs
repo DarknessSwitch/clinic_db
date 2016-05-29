@@ -48,12 +48,14 @@ namespace clinic_db
                 LinkLabel lb = new LinkLabel(); lb.Font = new Font("Calibri", 12); lb.Text = cards[i].Name; lb.Show();
                 Label lb1 = new Label(); lb1.Font = new Font("Calibri", 12); lb1.Text = cards[i].YearsSuffered.ToString(); lb1.Show();
                 Label lb2 = new Label(); lb2.Font = new Font("Calibri", 12); lb2.Text = cards[i].Doctor; lb2.Show();
+                Label lb3 = new Label(); lb3.Font = new Font("Calibri", 12); lb3.Text = cards[i].Type; lb3.Show();
                 DeleteButton b = new DeleteButton(cards[i].id, "medical_card"); b.Click += b_Click;
                 lb.Click += lb_Click;
                 this.CardTable.Controls.Add(lb, 0, i);
                 this.CardTable.Controls.Add(lb1, 1, i);
                 this.CardTable.Controls.Add(lb2, 2, i);
-                this.CardTable.Controls.Add(b, 3, i);
+                this.CardTable.Controls.Add(lb3, 3, i);
+                this.CardTable.Controls.Add(b, 4, i);
             }
         }
 
@@ -108,6 +110,15 @@ namespace clinic_db
         {
             this.Show();
             LoadEntries();
+        }
+
+        private void CheckButton_Click(object sender, EventArgs e)
+        {
+            Form f = new Form();
+            Check c = new Check(DateTime.Today,cards,_profile);
+            f.Controls.Add(c);
+            f.Size = c.Size;
+            f.Show();
         }
 
     }

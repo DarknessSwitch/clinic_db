@@ -1,3 +1,4 @@
+drop database if exists clinic;
 create database clinic;
 use clinic;
 
@@ -7,6 +8,26 @@ create table proc
    name varchar(50) not null,
    duration int not null,
    cost decimal not null
+);
+
+create table testtype 
+(
+   id int primary key not null auto_increment,
+   name varchar(50) not null,
+   cost decimal
+);
+
+create table surveytype 
+(
+   id int primary key not null auto_increment,
+   name varchar(50) not null,
+   cost decimal
+);
+
+create table diseasetype
+(
+  id int primary key not null auto_increment,
+  name varchar(50) not null
 );
 
 create table patient 
@@ -36,9 +57,12 @@ create table medical_card
     disease_name varchar(50) not null,
     years_suffered int,
     is_cured bool,
-    doctor_id int,
+    employee_id int,
     patient_id int,
-    foreign key (doctor_id) references employee(id) on delete cascade on update cascade,
+    type_id int,
+    added_on datetime,
+    foreign key(type_id) references diseasetype(id) on delete cascade on update cascade,
+    foreign key(employee_id) references employee(id) on delete cascade on update cascade,
     foreign key (patient_id) references patient(id) on delete cascade on update cascade
 );
 
@@ -60,23 +84,26 @@ create table session
 create table test
 (
 id int not null auto_increment,
-name varchar(50) not null,
 date_time datetime,
 result varchar(255),
 card_id int,
+type_id int,
 primary key(id),
-foreign key(card_id) references medical_card(id) on delete cascade on update cascade
+foreign key(card_id) references medical_card(id) on delete cascade on update cascade,
+foreign key(type_id) references testtype(id) on delete cascade on update cascade
 );
 
 create table survey
 (
 id int not null auto_increment,
-name varchar(50), 
 date_time datetime,
 result varchar(255),
 card_id int,
-doctor_id int,
+employee_id int,
+type_id int,
 primary key(id),
 foreign key(card_id) references medical_card(id) on delete cascade on update cascade,
-foreign key(doctor_id) references employee(id) on delete cascade on update cascade
+foreign key(employee_id) references employee(id) on delete cascade on update cascade,
+foreign key(type_id) references surveytype(id) on delete cascade on update cascade
 );
+

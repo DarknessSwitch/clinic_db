@@ -32,12 +32,14 @@ namespace clinic_db
             this.ProceduresTab.Controls.Add(prlist);
 
             ReportsTab.Enter += ReportsTab_Enter;
-            ReportsTab.Controls.Add(new ReportMenu());
+            ReportMenu m = new ReportMenu();
+            ReportsTab.Controls.Add(m);
         }
 
         void ReportsTab_Enter(object sender, EventArgs e)
         {
-            ReportMenu m = (ReportMenu)ReportsTab.Controls["ReportMenu"];
+            ReportMenu m = (ReportMenu)ReportsTab.Controls[0];
+            m.LoadData();
         }
 
         void PatientsTab_Enter(object sender, EventArgs e)
@@ -55,7 +57,7 @@ namespace clinic_db
         void ProceduresTab_Enter(object sender, EventArgs e)
         {
             ProceduresList list = (ProceduresList)ProceduresTab.Controls[0];
-            list.LoadEntries();
+            list.LoadAllEnries();
         }
 
         private void StaffTab_Click(object sender, EventArgs e)

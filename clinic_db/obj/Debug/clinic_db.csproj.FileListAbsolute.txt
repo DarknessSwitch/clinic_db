@@ -20,3 +20,5 @@ C:\Projects\Net\clinic_db\clinic_db\obj\Debug\clinic_db.AddCard.resources
 C:\Projects\Net\clinic_db\clinic_db\obj\Debug\clinic_db.ReportWindow.resources
 C:\Projects\Net\clinic_db\clinic_db\obj\Debug\clinic_db.ReportMenu.resources
 C:\Projects\Net\clinic_db\clinic_db\bin\Debug\MySql.Data.dll
+C:\Projects\Net\clinic_db\clinic_db\obj\Debug\clinic_db.Check.resources
+C:\Projects\Net\clinic_db\clinic_db\obj\Debug\clinic_db.ChartControl.resources

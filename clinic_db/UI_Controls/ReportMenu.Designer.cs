@@ -58,11 +58,22 @@
             this.SessionStartPicker = new System.Windows.Forms.DateTimePicker();
             this.SessionEndPicker = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
+            this.ChartButton = new System.Windows.Forms.Button();
+            this.StartYearBox = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.EndYearBox = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ChangeChartButton = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +95,7 @@
             this.groupBox1.Controls.Add(this.PatientBox);
             this.groupBox1.Location = new System.Drawing.Point(16, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(163, 336);
+            this.groupBox1.Size = new System.Drawing.Size(163, 206);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patients";
@@ -144,7 +155,7 @@
             this.groupBox2.Controls.Add(this.DoctorBox);
             this.groupBox2.Location = new System.Drawing.Point(197, 53);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(170, 336);
+            this.groupBox2.Size = new System.Drawing.Size(170, 206);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doctors";
@@ -250,7 +261,7 @@
             this.groupBox4.Controls.Add(this.SurveyStartPicker);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.SurveyEndPicker);
-            this.groupBox4.Location = new System.Drawing.Point(385, 227);
+            this.groupBox4.Location = new System.Drawing.Point(589, 221);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(184, 162);
             this.groupBox4.TabIndex = 5;
@@ -355,10 +366,112 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "From";
             // 
+            // ChartButton
+            // 
+            this.ChartButton.Location = new System.Drawing.Point(28, 49);
+            this.ChartButton.Name = "ChartButton";
+            this.ChartButton.Size = new System.Drawing.Size(75, 23);
+            this.ChartButton.TabIndex = 7;
+            this.ChartButton.Text = "Chart";
+            this.ChartButton.UseVisualStyleBackColor = true;
+            this.ChartButton.Click += new System.EventHandler(this.ChartButton_Click);
+            // 
+            // StartYearBox
+            // 
+            this.StartYearBox.FormattingEnabled = true;
+            this.StartYearBox.Location = new System.Drawing.Point(224, 51);
+            this.StartYearBox.Name = "StartYearBox";
+            this.StartYearBox.Size = new System.Drawing.Size(121, 21);
+            this.StartYearBox.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(166, 57);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Start year";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(166, 85);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "End year";
+            // 
+            // EndYearBox
+            // 
+            this.EndYearBox.FormattingEnabled = true;
+            this.EndYearBox.Location = new System.Drawing.Point(224, 77);
+            this.EndYearBox.Name = "EndYearBox";
+            this.EndYearBox.Size = new System.Drawing.Size(121, 21);
+            this.EndYearBox.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(25, 26);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Disease distribution";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button1);
+            this.groupBox6.Controls.Add(this.ChangeChartButton);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.ChartButton);
+            this.groupBox6.Controls.Add(this.EndYearBox);
+            this.groupBox6.Controls.Add(this.StartYearBox);
+            this.groupBox6.Controls.Add(this.label11);
+            this.groupBox6.Controls.Add(this.label10);
+            this.groupBox6.Location = new System.Drawing.Point(16, 265);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(351, 172);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Charts";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(153, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(10, 164);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // ChangeChartButton
+            // 
+            this.ChangeChartButton.Location = new System.Drawing.Point(246, 104);
+            this.ChangeChartButton.Name = "ChangeChartButton";
+            this.ChangeChartButton.Size = new System.Drawing.Size(75, 23);
+            this.ChangeChartButton.TabIndex = 15;
+            this.ChangeChartButton.Text = "Chart";
+            this.ChangeChartButton.UseVisualStyleBackColor = true;
+            this.ChangeChartButton.Click += new System.EventHandler(this.ChangeChartButton_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(221, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(117, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Disease count dynamic";
+            // 
             // ReportMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -377,6 +490,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,5 +529,15 @@
         private System.Windows.Forms.DateTimePicker SessionStartPicker;
         private System.Windows.Forms.DateTimePicker SessionEndPicker;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button ChartButton;
+        private System.Windows.Forms.ComboBox StartYearBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox EndYearBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button ChangeChartButton;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
     }
 }

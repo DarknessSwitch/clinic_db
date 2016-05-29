@@ -37,6 +37,8 @@
             this.CuredCheckBox = new System.Windows.Forms.CheckBox();
             this.DoctorBox = new System.Windows.Forms.ComboBox();
             this.Add = new System.Windows.Forms.Button();
+            this.TypeBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TopLabel
@@ -70,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 132);
+            this.label3.Location = new System.Drawing.Point(12, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 3;
@@ -78,7 +80,7 @@
             // 
             // SufferedBox
             // 
-            this.SufferedBox.Location = new System.Drawing.Point(94, 132);
+            this.SufferedBox.Location = new System.Drawing.Point(94, 182);
             this.SufferedBox.Name = "SufferedBox";
             this.SufferedBox.Size = new System.Drawing.Size(176, 20);
             this.SufferedBox.TabIndex = 5;
@@ -93,7 +95,7 @@
             // CuredCheckBox
             // 
             this.CuredCheckBox.AutoSize = true;
-            this.CuredCheckBox.Location = new System.Drawing.Point(94, 178);
+            this.CuredCheckBox.Location = new System.Drawing.Point(94, 216);
             this.CuredCheckBox.Name = "CuredCheckBox";
             this.CuredCheckBox.Size = new System.Drawing.Size(65, 17);
             this.CuredCheckBox.TabIndex = 7;
@@ -118,11 +120,30 @@
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
+            // TypeBox
+            // 
+            this.TypeBox.FormattingEnabled = true;
+            this.TypeBox.Location = new System.Drawing.Point(94, 135);
+            this.TypeBox.Name = "TypeBox";
+            this.TypeBox.Size = new System.Drawing.Size(176, 21);
+            this.TypeBox.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Type";
+            // 
             // AddCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 273);
+            this.Controls.Add(this.TypeBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.DoctorBox);
             this.Controls.Add(this.CuredCheckBox);
@@ -150,5 +171,7 @@
         private System.Windows.Forms.CheckBox CuredCheckBox;
         private System.Windows.Forms.ComboBox DoctorBox;
         private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.ComboBox TypeBox;
+        private System.Windows.Forms.Label label4;
     }
 }

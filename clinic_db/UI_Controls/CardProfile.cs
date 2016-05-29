@@ -18,6 +18,8 @@ namespace clinic_db
         private List<SessionModel> _sessions;
         private List<SurveyModel> _surveys;
         private List<EmployeeModel> _employees;
+        private List<TypeModel> _tt;
+        private List<TypeModel> _st;
 
         public CardProfile()
         {
@@ -30,7 +32,9 @@ namespace clinic_db
             _patient = patient;
             _card = card;
             _employees = DbConnector.GetInstance().GetStaffList();
-            TopLabel.Text = _card.Name + " medical card of " + _patient.Name;
+            _tt = DbConnector.GetInstance().GetTestTypes();
+            _st = DbConnector.GetInstance().GetSurveyTypes();
+            TopLabel.Text = _card.Name + " medical card of " + _patient.Name+"\nAdded on "+_card.Added;
             LoadEntriesTests();
             LoadEntriesSessions();
             LoadEntriesSurveys();
@@ -44,28 +48,33 @@ namespace clinic_db
             SurveysTable.Update();
             for (int i = 0; i < _surveys.Count; i++)
             {
-                _surveys[i].EmployeeName = DbConnector.GetInstance().GetEmployeeProfile(_surveys[i].employeeId).Name ?? "";
-                TextBox lb = new TextBox(); lb.Font = new Font("Calibri", 12); lb.Size = new Size(80, lb.Height); lb.Text = _surveys[i].Name; lb.Show();
-
+                ComboBox n = new ComboBox(); n.Font = new Font("Calibri", 12);
+                n.BeginUpdate();
+                _st.ForEach(x => n.Items.Add(x.Name));
+                n.EndUpdate(); n.Text = _surveys[i].Type;
+             
                 DateTimePicker lb1 = new DateTimePicker(); lb1.Size = new Size(120, lb1.Height);
                 lb1.Text = _surveys[i].DateTime; lb1.Show();
 
-                TextBox lb2 = new TextBox(); lb2.Font = new Font("Calibri", 12); lb2.Size = new Size(150, lb2.Height);
+                TextBox lb2 = new TextBox(); lb2.Font = new Font("Calibri", 12); 
                 lb2.Text = _surveys[i].Result; lb2.Show();
-
-                ComboBox cb = new ComboBox(); cb.Font = new Font("Calibri", 12); cb.Size = new Size(100, cb.Height);
+                
+                ComboBox cb = new ComboBox(); cb.Font = new Font("Calibri", 12); 
                 cb.BeginUpdate();
                 _employees.ForEach(x => cb.Items.Add(x.Name));
-                cb.EndUpdate();
-                cb.Text = _surveys[i].EmployeeName;
+                cb.EndUpdate(); cb.Text = _surveys[i].EmployeeName;
+
+                Label lb3 = new Label(); lb3.Font = new Font("Calibri", 12);
+                lb3.Text = _st.Find(x => x.Name == _surveys[i].Type).Cost.ToString(); lb3.Show();
 
                 DeleteButton vb = new DeleteButton(_surveys[i].id, "survey");
                 vb.Click += vb_Click;
-                this.SurveysTable.Controls.Add(lb, 0, i);
+                this.SurveysTable.Controls.Add(n, 0, i);
                 this.SurveysTable.Controls.Add(lb1, 1, i);
                 this.SurveysTable.Controls.Add(lb2, 2, i);
                 this.SurveysTable.Controls.Add(cb, 3, i);
-                this.SurveysTable.Controls.Add(vb, 4, i);
+                this.SurveysTable.Controls.Add(lb3, 4, i);
+                this.SurveysTable.Controls.Add(vb, 5, i);
             }
         }
 
@@ -84,12 +93,8 @@ namespace clinic_db
             SessionsTable.Update();
             for (int i = 0; i < _sessions.Count; i++)
             {
-                _sessions[i].ProcedureName = DbConnector.GetInstance().
-                GetProcedureProfile(_sessions[i].procId).Name;
-                _sessions[i].EmployeeName = DbConnector.GetInstance().
-                    GetEmployeeProfile(_sessions[i].employeeId).Name ?? "";
-
-                Label lb = new Label();lb.Font= new Font("Calibri",12); lb.Text = _sessions[i].ProcedureName; lb.Show();
+                Label lb = new Label(); lb.Font = new Font("Calibri", 12); lb.Size = new Size(150, lb.Height);
+                lb.Text = _sessions[i].ProcedureName; lb.Show();
 
                 DateTimePicker lb1 = new DateTimePicker(); lb1.Size = new Size(120, lb1.Height);
                 lb1.Text = _sessions[i].DateTime; lb1.Show();
@@ -122,22 +127,22 @@ namespace clinic_db
             TestsTable.Update();
             for (int i = 0; i < _tests.Count; i++)
             {
-                TextBox lb = new TextBox(); lb.Size = new Size(80, lb.Height); lb.Font = new Font("Calibri", 12); 
-                lb.Text = _tests[i].Name; lb.Show();
-
                 DateTimePicker lb1 = new DateTimePicker(); lb1.Size = new Size(120, lb1.Height);
                 lb1.Text = _tests[i].DateTime; lb1.Show();
-
                 TextBox lb2 = new TextBox(); lb2.Font = new Font("Calibri", 12);
-                lb2.Size = new Size(400, lb2.Height); 
+                lb2.Size = new Size(300, lb2.Height); 
                 lb2.Text = _tests[i].Result; lb2.Show();
-                
+                ComboBox cb = new ComboBox(); cb.BeginUpdate(); _tt.ForEach(x => cb.Items.Add(x.Name)); cb.EndUpdate();
+                cb.Text = _tests[i].Type;
+                Label lb3 = new Label(); lb3.Font = new Font("Calibri", 12);
+                lb3.Text = _tt.Find(x=>x.Name==_tests[i].Type).Cost.ToString(); lb3.Show();
                 DeleteButton b = new DeleteButton(_tests[i].id, "test");
                 b.Click += b_Click;
-                this.TestsTable.Controls.Add(lb, 0, i);
+                this.TestsTable.Controls.Add(cb, 0, i);
                 this.TestsTable.Controls.Add(lb1, 1, i);
                 this.TestsTable.Controls.Add(lb2, 2, i);
-                this.TestsTable.Controls.Add(b, 3, i);
+                this.TestsTable.Controls.Add(lb3, 3, i);
+                this.TestsTable.Controls.Add(b, 4, i);
             }
         }
 
@@ -150,9 +155,8 @@ namespace clinic_db
 
         private void AddTestButton_Click(object sender, EventArgs e)
         {
-            List<string> val = new List<string>(){"\"\"",String.Format("\"{0}\"",
-                                        DateTime.Now.ToString("yyyy-MM-dd")),
-                                        "\"\"", _card.id.ToString()};
+            List<string> val = new List<string>(){"'"+DateTime.Now.ToString("yyyy-MM-dd")+"'",
+                                        "\"\"", _card.id.ToString(),_tt[0].id.ToString()};
             DbConnector.GetInstance().AddEntry("test", val);
             LoadEntriesTests();
         }
@@ -163,11 +167,13 @@ namespace clinic_db
             for (int i = 0; i < _tests.Count; i++)
             {
                 DateTime dt = DateTime.Parse(TestsTable.GetControlFromPosition(1, i).Text);
-                _tests[i].Name = TestsTable.GetControlFromPosition(0,i).Text;
+                int tid = _tt.Find(x => x.Name == TestsTable.GetControlFromPosition(0, i).Text).id;
+                _tests[i].type_id = tid;
                 _tests[i].DateTime = dt.ToString("yyy-MM-dd HH:mm:ss");
                 _tests[i].Result = TestsTable.GetControlFromPosition(2,i).Text;
                 db.UpdateTest(_tests[i]);
             }
+            LoadEntriesTests();
         }
 
         private void AddSessionButton_Click(object sender, EventArgs e)
@@ -197,9 +203,10 @@ namespace clinic_db
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<string> val = new List<string>(){"\"\"",String.Format("\"{0}\"",
+            List<string> val = new List<string>(){String.Format("\"{0}\"",
                                         DateTime.Now.ToString("yyyy-MM-dd")),
-                                        "\"\"",  _card.id.ToString(),_employees[0].id.ToString()};
+                                        "\"\"",  _card.id.ToString(),_employees[0].id.ToString(),
+                                                    _st[0].id.ToString()};
             DbConnector.GetInstance().AddEntry("survey", val);
             LoadEntriesSurveys();
         }
@@ -210,12 +217,13 @@ namespace clinic_db
             for (int i = 0; i < _surveys.Count; i++)
             {
                 DateTime dt = DateTime.Parse(SurveysTable.GetControlFromPosition(1, i).Text);
-                _surveys[i].Name = SurveysTable.GetControlFromPosition(0, i).Text;
+                _surveys[i].type_id = _st.Find(x=>x.Name==SurveysTable.GetControlFromPosition(0, i).Text).id;
                 _surveys[i].DateTime = dt.ToString("yyy-MM-dd HH:mm:ss");
                 _surveys[i].Result = SurveysTable.GetControlFromPosition(2, i).Text;
                 _surveys[i].employeeId = db.GetEmployeeProfile(SurveysTable.GetControlFromPosition(3, i).Text).id;
                 db.UpdateSurvey(_surveys[i]);
             }
+            LoadEntriesSurveys();
         }
     }
 }

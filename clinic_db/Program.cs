@@ -16,14 +16,7 @@ namespace clinic_db
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
-                Application.Run(new MainForm());
-            }
-            catch (Exception)
-            {
-                Application.Restart();
-            }
+            Application.Run(new MainForm());
         }
     }
 }

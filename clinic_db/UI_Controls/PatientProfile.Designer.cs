@@ -48,6 +48,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.AddCardButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CheckButton = new System.Windows.Forms.Button();
             this.ProfileTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,20 +184,19 @@
             // CardTable
             // 
             this.CardTable.AutoScroll = true;
-            this.CardTable.AutoScrollMinSize = new System.Drawing.Size(100, 100);
-            this.CardTable.AutoSize = true;
             this.CardTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.CardTable.ColumnCount = 4;
-            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.CardTable.ColumnCount = 5;
+            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.CardTable.Location = new System.Drawing.Point(287, 110);
             this.CardTable.Name = "CardTable";
             this.CardTable.RowCount = 2;
             this.CardTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.CardTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.CardTable.Size = new System.Drawing.Size(297, 105);
+            this.CardTable.Size = new System.Drawing.Size(454, 191);
             this.CardTable.TabIndex = 3;
             // 
             // TopLabel
@@ -212,7 +213,7 @@
             // 
             this.CardsLabel.AutoSize = true;
             this.CardsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CardsLabel.Location = new System.Drawing.Point(379, 48);
+            this.CardsLabel.Location = new System.Drawing.Point(433, 48);
             this.CardsLabel.Name = "CardsLabel";
             this.CardsLabel.Size = new System.Drawing.Size(106, 20);
             this.CardsLabel.TabIndex = 5;
@@ -221,7 +222,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(288, 91);
+            this.label1.Location = new System.Drawing.Point(300, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 6;
@@ -230,16 +231,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(408, 91);
+            this.label2.Location = new System.Drawing.Point(414, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Years Suffered";
+            this.label2.Text = "Y.Suff.";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(523, 91);
+            this.label3.Location = new System.Drawing.Point(486, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 8;
@@ -247,7 +248,7 @@
             // 
             // AddCardButton
             // 
-            this.AddCardButton.Location = new System.Drawing.Point(621, 81);
+            this.AddCardButton.Location = new System.Drawing.Point(621, 57);
             this.AddCardButton.Name = "AddCardButton";
             this.AddCardButton.Size = new System.Drawing.Size(95, 23);
             this.AddCardButton.TabIndex = 9;
@@ -255,13 +256,32 @@
             this.AddCardButton.UseVisualStyleBackColor = true;
             this.AddCardButton.Click += new System.EventHandler(this.AddCardButton_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(593, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Type";
+            // 
+            // CheckButton
+            // 
+            this.CheckButton.Location = new System.Drawing.Point(641, 321);
+            this.CheckButton.Name = "CheckButton";
+            this.CheckButton.Size = new System.Drawing.Size(75, 23);
+            this.CheckButton.TabIndex = 11;
+            this.CheckButton.Text = "CheckOut";
+            this.CheckButton.UseVisualStyleBackColor = true;
+            this.CheckButton.Click += new System.EventHandler(this.CheckButton_Click);
+            // 
             // PatientProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoScrollMinSize = new System.Drawing.Size(100, 100);
             this.AutoSize = true;
+            this.Controls.Add(this.CheckButton);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.AddCardButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -273,7 +293,7 @@
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.CloseButton);
             this.Name = "PatientProfile";
-            this.Size = new System.Drawing.Size(725, 375);
+            this.Size = new System.Drawing.Size(746, 375);
             this.Load += new System.EventHandler(this.PatientProfile_Load);
             this.ProfileTable.ResumeLayout(false);
             this.ProfileTable.PerformLayout();
@@ -304,5 +324,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button AddCardButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button CheckButton;
     }
 }
